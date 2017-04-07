@@ -146,9 +146,9 @@ console.log((f=function a() {
 
 
 // //                   管道机制 （pipeline）:前一个函数的输出是后一个函数的输入
-// const  a=x=>x+1;
-// const b=x=>x*2;
-// console.log(b(a(2)));//6
+const  a=x=>x+1;
+const b=x=>x*2;
+console.log(b(a(2)));//6
 
 // //                  尾调用： 某个函数的最后一步是调用另一个函数   不一定写在最后！！但一定是最后一步操作！！！！！
 // //                  尾递归：函数尾调用自己                调用帧就是调用记录
