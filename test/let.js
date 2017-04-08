@@ -131,8 +131,8 @@ do_something();
 //暂时性死区的本质就是，只要一进入当前作用域，所要使用的变量就已经存在了，但是不可获取，只有等到声明变量的那一行代码出现，才可以获取和使用该变量。
 if (true) {
     // TDZ开始
-    // tmp = 'abc';// ReferenceError: tmp is not defined
-    // console.log(tmp); // ReferenceError: tmp is not defined
+    tmp = 'abc';// ReferenceError: tmp is not defined
+    console.log(tmp); // ReferenceError: tmp is not defined
 
     let tmp;
     // TDZ结束
@@ -153,7 +153,7 @@ function foo1() {
     let a = 10;
     var a = 1;
 }
-foo1();//test.js:85 Uncaught SyntaxError: Identifier 'a' has already been declared
+foo1();// Uncaught SyntaxError: Identifier 'a' has already been declared
 
 // 报错
 function foo2() {
@@ -177,7 +177,7 @@ function f1() {
     if (true) {
         let n = 10;//因为let有块级作用域
     }
-    console.log(n); // test.js:122 Uncaught ReferenceError: n is not defined
+    console.log(n); // Uncaught ReferenceError: n is not defined
 }
 f1();//test.js:122 Uncaught ReferenceError: n is not defined
 
@@ -197,9 +197,9 @@ function f1() {
     if (false) {
         var n = 10;
     }
-    console.log(n); // 5
+    console.log(n);
 }
-f1();//test.js:147 Uncaught SyntaxError: Identifier 'n' has already been declared
+f1();//147 Uncaught SyntaxError: Identifier 'n' has already been declared
 
 //报错
 function f1() {
@@ -209,7 +209,7 @@ function f1() {
     }
     console.log(n);
 }
-f1();//test.js:147 Uncaught SyntaxError: Identifier 'n' has already been declared
+f1();// Uncaught SyntaxError: Identifier 'n' has already been declared
 
 
 

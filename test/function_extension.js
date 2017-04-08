@@ -27,7 +27,7 @@ function f({x,y=1}) {
     console.log(x,y);
 }
 f({x:100,y:200});//100 200
-f();//Uncaught TypeError: Cannot match against 'undefined' or 'null'.
+f();//Uncaught TypeError: Cannot match against 'undefined' or 'null'.    undefined和null不能转换为对象
 
 function fetch(url, { body = '', method = 'GET', headers = {} }) {
     console.log(method);

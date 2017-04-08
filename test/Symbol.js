@@ -22,7 +22,7 @@ console.log(a);//Symbol(hhh)
 console.log(b);//Symbol(hhh)
 //Symbol值不能与其他类型的值进行运算，会报错。
 // console.log('www'+a);//Uncaught TypeError: Cannot convert a Symbol value to a string
-//Symbol值可以显式转为字符串。ymbol值也可以转为布尔值，但是不能转为数值!!!!!!!!!!!!!!!!!!!!!!!!!!
+//Symbol值可以显式转为字符串。Symbol值也可以转为布尔值，但是不能转为数值!!!!!!!!!!!!!!!!!!!!!!!!!!
 console.log(String(a));//Symbol(hhh)
 console.log(Boolean(a));//true
 console.log(Number(a) );//Uncaught TypeError: Cannot convert a Symbol value to a number
