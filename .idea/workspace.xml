@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2e2d5eb7-95f1-4705-8c29-9a763e55305a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/Generator.js" afterPath="$PROJECT_DIR$/test/Generator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/Promise.js" afterPath="$PROJECT_DIR$/test/Promise.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/destructuring.js" afterPath="$PROJECT_DIR$/test/destructuring.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/index.html" afterPath="$PROJECT_DIR$/test/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/string_extension.js" afterPath="$PROJECT_DIR$/test/string_extension.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/else.js" afterPath="$PROJECT_DIR$/test/else.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -41,10 +37,10 @@
       <file leaf-file-name="else.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/else.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2874">
-              <caret line="46" column="2" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="2" />
+            <state relative-caret-position="677">
+              <caret line="167" column="43" selection-start-line="167" selection-start-column="43" selection-end-line="167" selection-end-column="43" />
               <folding>
-                <element signature="e#4566#4618#0" expanded="true" />
+                <element signature="e#4567#4619#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -176,13 +172,13 @@
         <option value="$PROJECT_DIR$/test/number_extension.js" />
         <option value="$PROJECT_DIR$/test/Symbol.js" />
         <option value="$PROJECT_DIR$/test/array_extension.js" />
-        <option value="$PROJECT_DIR$/test/else.js" />
         <option value="$PROJECT_DIR$/test/let.js" />
         <option value="$PROJECT_DIR$/test/destructuring.js" />
         <option value="$PROJECT_DIR$/test/string_extension.js" />
         <option value="$PROJECT_DIR$/test/Promise.js" />
         <option value="$PROJECT_DIR$/test/Generator.js" />
         <option value="$PROJECT_DIR$/test/index.html" />
+        <option value="$PROJECT_DIR$/test/else.js" />
       </list>
     </option>
   </component>
@@ -354,12 +350,12 @@
       <workItem from="1491543170922" duration="16316000" />
       <workItem from="1491615048750" duration="24119000" />
       <workItem from="1499585762998" duration="11168000" />
-      <workItem from="1499604470287" duration="15000" />
+      <workItem from="1499604470287" duration="458000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94878000" />
+    <option name="totallyTimeSpent" value="95321000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -415,7 +411,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#4566#4618#0" expanded="true" />
+            <element signature="e#4567#4619#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -845,10 +841,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/else.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2874">
-          <caret line="46" column="2" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="2" />
+        <state relative-caret-position="677">
+          <caret line="167" column="43" selection-start-line="167" selection-start-column="43" selection-end-line="167" selection-end-column="43" />
           <folding>
-            <element signature="e#4566#4618#0" expanded="true" />
+            <element signature="e#4567#4619#0" expanded="true" />
           </folding>
         </state>
       </provider>
