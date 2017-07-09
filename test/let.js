@@ -24,10 +24,10 @@ console.log("i:",i);//5
 
 
 
-for(let j=0;j<5;j++){
-    console.log("j:",j);
-}
-console.log("j:",j);//报错  test.js:20 Uncaught ReferenceError: j is not defined
+    for(let j=0;j<5;j++){
+        console.log("j:",j);
+    }
+    console.log("j:",j);//报错  test.js:20 Uncaught ReferenceError: j is not defined
 
 
 
@@ -172,6 +172,50 @@ function f1() {
 }
 f1();
 
+
+//报错
+function f1() {
+    var n = 5;
+
+    let n = 10;
+
+    console.log(n); // Uncaught SyntaxError: Identifier 'n' has already been declared
+}
+f1();
+
+//报错
+function f1() {
+    let n = 5;
+
+    var n = 10;
+
+    console.log(n); // Uncaught SyntaxError: Identifier 'n' has already been declared
+}
+f1();
+
+
+//不报错
+function f1() {
+var n = 5;
+
+var n = 10;
+
+console.log(n); // 10
+}
+f1();
+
+
+//报错
+function f1() {
+    let n = 5;
+
+    let n = 10;
+
+    console.log(n); //Uncaught SyntaxError: Identifier 'n' has already been declared
+}
+f1();
+
+
 //报错
 function f1() {
     if (true) {
@@ -200,6 +244,17 @@ function f1() {
     console.log(n);
 }
 f1();//147 Uncaught SyntaxError: Identifier 'n' has already been declared
+
+
+//不报错
+function f1() {
+    if (false) {
+        var n = 10;
+    }
+    console.log(n); //即使不能进入if语句，但var变量提升了，有var n;的声明只是没值，这里输出undefined
+}
+f1();
+
 
 //报错
 function f1() {
