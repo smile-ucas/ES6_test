@@ -121,6 +121,10 @@ console.log(baz);//1
 var {foo:baz}={f:1,bar:2};
 console.log(baz);//undefined
 
+   var {foo:baz}={baz:1,bar:2};
+   console.log(baz);//undefined
+
+
 //解构嵌套结构的对象
 let obj={
     p:[
@@ -164,12 +168,13 @@ console.log(x);//hhh
 console.log(y);//ooo
 console.log(p);//Uncaught ReferenceError: p is not defined,因为p只是模式，不是变量，所以p不会被赋值
 
+
 let obj = {};
 let arr = [];
-
 ({ foo: obj.prop, bar: arr[0] } = { foo: 123, bar: true });
 console.log(obj);//{prop:123}
 console.log(arr);//[true]
+
 
  ///////////////////////////////////////对象的解构也可以有默认值 ///////////////////////////////////
 var {x=2}={};
@@ -191,11 +196,11 @@ console.log(y);//1
 
  // Math是对象，直接用
 let {log,sin,cos}=Math;
-console.log(log);
-console.log(sin);
-console.log(cos);
+console.log(log);//ƒ log() { [native code] }
+console.log(sin);//ƒ sin() { [native code] }
+console.log(cos);//ƒ cos() { [native code] }
 
-  // //数组是特殊的对象，可以吧数组进行对象属性的解构
+  // //数组是特殊的对象，可以把数组进行对象属性的解构
 let arr=[1,2,3]
 let {0:a,1:b}=arr;
 console.log(a);//1

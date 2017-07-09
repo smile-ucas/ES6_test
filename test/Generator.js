@@ -1,6 +1,126 @@
 /**
  * Created by xiaoxiao on 2017/4/8.
  */
+
+//Generator 是可迭代对象的一种实现。
+
+// Generator 最大的好处就是!!!!!!!!!!!!!!!!!!函数可以被暂停执行并保持上下文!!!!!!!!!!!!!!!!!!
+
+
+//执行 generator 方法会创建一个 Generator 对象我们可以通过 next 方法来控制函数执行。
+
+// 运行 next 方法会执行 generator 函数中的代码，直到碰到下一个 yield 表达式（译注：执行完 yield 暂停）。
+
+
+
+
+
+
+
+//yield* 是用来在一个 generator 中调用另一个 generator
+function* foo() {
+    yield 'foo'
+}
+// 我们在'bar'generator函数内调用 'foo' generator函数会怎么样?
+function* bar() {
+    yield 'bar'
+    foo()
+    yield 'bar again'
+}
+const b = bar();
+b.next() // { value: 'bar', done: false }
+b.next() // { value: 'bar again', done: false }
+b.next() // { value: undefined, done: true }
+
+
+
+//被 bar generator 方法执行返回的 b 迭代器，当我们调用 foo并没有以我们期望的方式运行。
+// 这是因为，尽管 foo 创建的迭代器器调用了，但我们没有遍历它。
+// 这就是为什么ES6带来的 yield* 语法。
+function* foo() {
+    yield 'foo'
+}
+function* bar() {
+    yield 'bar'
+    yield* foo()
+    yield 'bar again'
+}
+const b = bar();
+b.next() // { value: 'bar', done: false }
+b.next() // { value: 'foo', done: false }
+b.next() // { value: 'bar again', done: false }
+b.next() // { value: undefined, done: true }
+for (let e of bar()) {
+    console.log(e)
+    // bar
+    // foo
+    // bar again
+}
+console.log([...bar()]) // [ 'bar', 'foo', 'bar again' ]
+
+
+
+// 我们可以发现， yield* 允许我们在一个生成器的内部调用另一个生成器。
+// 它也允许我们通过执行生成器存储返回的值。
+function* foo() {
+    yield 'foo'
+    return 'foo done'
+}
+function* bar() {
+    yield 'bar'
+    const result = yield* foo()
+    yield result
+}
+for (let e of bar()) {
+    console.log(e)
+    // bar
+    // foo
+    // foo done
+}
+
+//throw
+// 我们可以在一个 geneator 中抛出错误， next 将会传播我们的期望的值
+// 只要有一个异常处理被抛出，遍历器就会暂停，它的状态也被无限期的设置为 done: true。
+function* generatorWithThrow() {
+    yield 'foo'
+    throw new Error('Ups!')
+    yield 'bar'
+}
+var g = generatorWithThrow()
+g.next() // { value: 'foo', done: false }
+g.next() // Error: Ups!
+g.next() // { value: undefined, done: true }
+
+
+
+
+
+
+// return
+function* generatorWithReturn() {
+    yield 'foo'
+    yield 'bar'
+    return 'done'
+}
+var g = generatorWithReturn()
+g.next() // { value: 'foo', done: false }
+g.next() // { value: 'bar', done: false }
+g.next() // { value: 'done', done: true }
+g.next() // { value: undefined, done: true }
+for (let e of g) {
+    console.log(e)
+    // 'foo'
+    // 'bar'
+}
+// 注意这里！！！！！！！！！！！！！！！！！！！！没有跟着return后面的值！！！！！！！！！！！！！！！
+console.log([...g]) // [ 'foo', 'bar' ]
+//return 也不想yeild能记住上下文执行generatorFun.next()都行，return后就不能再执行这个generatorFun.next()了，这个函数执行后得到的也是{value:undefined，done:true}
+
+
+
+
+
+
 // //从语法上，首先可以把它理解成，Generator 函数是一个状态机，封装了多个内部状态。
 // //执行 Generator 函数会返回一个遍历器对象，也就是说，Generator 函数除了状态机，还是一个遍历器对象生成函数。
 // //返回的遍历器对象，可以依次遍历 Generator 函数内部的每一个状态。

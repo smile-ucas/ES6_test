@@ -21,7 +21,7 @@ console.log(s.includes('lo w',1));//true，含有它吗,以第一个位置开始
 
  // ////////////////////////////////repeat//////////////////////////////////////////////////////////////////////////////
 console.log('hello '.repeat(3));//hello hello hello ,返回新字符串
-console.log('hello '.repeat(3.9));//hello hello hello ,小数取整
+console.log('hello '.repeat(3.9));//hello hello hello ,小数向下取整
 console.log("hello ".repeat(NaN));//""
 console.log("hello ".repeat(-0.2));//""
 console.log("hello ".repeat(-1));//当小于等于-1时，就报错   Uncaught RangeError: Invalid count value at String.repeat (native)

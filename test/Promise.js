@@ -70,7 +70,7 @@ console.log('Hi!');
 //需要注意的是，catch方法返回的还是一个 Promise 对象，因此后面还可以接着调用then方法。
 
 
-
+//一般来说，不要在then方法里面定义Reject状态的回调函数（即then的第二个参数），总是使用catch方法。
 
 
 
